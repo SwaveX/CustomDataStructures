@@ -30,49 +30,49 @@ public class Program
 
         // Test 1: Empty list
         var list = new ClassicLinkedList<int>();
-        Console.WriteLine($"Empty list count: {list.Count}"); // 0
+        Console.WriteLine($"Empty list count: {list.Count}\n"); // 0
 
         // Test 2: AddFirst
         list.AddFirst(10);
         list.AddFirst(20);
         list.AddFirst(30);
-        Console.WriteLine($"After AddFirst (30, 20, 10): {string.Join(" -> ", list)}"); // 30 -> 20 -> 10
+        Console.WriteLine($"After AddFirst (30, 20, 10): {string.Join(" -> ", list)}\n"); // 30 -> 20 -> 10
 
         // Test 3: AddLast
         list.AddLast(5);
         list.AddLast(1);
-        Console.WriteLine($"After AddLast (5, 1): {string.Join(" -> ", list)}"); // 30 -> 20 -> 10 -> 5 -> 1
+        Console.WriteLine($"After AddLast (5, 1): {string.Join(" -> ", list)}\n"); // 30 -> 20 -> 10 -> 5 -> 1
 
         // Test 4: Contains & Find
         Console.WriteLine($"Contains 10: {list.Contains(10)}"); // True
         Console.WriteLine($"Contains 99: {list.Contains(99)}"); // False
         var node = list.Find(10);
-        Console.WriteLine($"Find(10) value: {node?.Value}"); // 10
+        Console.WriteLine($"Find(10) value: {node?.Value}\n"); // 10
 
         // Test 5: AddAfter
         list.AddAfter(node, 15);
-        Console.WriteLine($"After AddAfter(10, 15): {string.Join(" -> ", list)}"); // 30 -> 20 -> 10 -> 15 -> 5 -> 1
+        Console.WriteLine($"After AddAfter(10, 15): {string.Join(" -> ", list)}\n"); // 30 -> 20 -> 10 -> 15 -> 5 -> 1
 
         // Test 6: RemoveFirst
         list.RemoveFirst();
-        Console.WriteLine($"After RemoveFirst: {string.Join(" -> ", list)}"); // 20 -> 10 -> 15 -> 5 -> 1
+        Console.WriteLine($"After RemoveFirst: {string.Join(" -> ", list)}\n"); // 20 -> 10 -> 15 -> 5 -> 1
 
         // Test 7: RemoveLast
         list.RemoveLast();
-        Console.WriteLine($"After RemoveLast: {string.Join(" -> ", list)}"); // 20 -> 10 -> 15 -> 5
+        Console.WriteLine($"After RemoveLast: {string.Join(" -> ", list)}\n"); // 20 -> 10 -> 15 -> 5
 
         // Test 8: Remove specific value
         bool removed = list.Remove(15);
         Console.WriteLine($"Remove(15) success: {removed}"); // True
-        Console.WriteLine($"After Remove(15): {string.Join(" -> ", list)}"); // 20 -> 10 -> 5
+        Console.WriteLine($"After Remove(15): {string.Join(" -> ", list)}\n"); // 20 -> 10 -> 5
 
         // Test 9: Constructor with collection
         var list2 = new ClassicLinkedList<string>(new[] { "apple", "banana", "cherry" });
-        Console.WriteLine($"From collection: {string.Join(" -> ", list2)}"); // apple -> banana -> cherry
+        Console.WriteLine($"From collection: {string.Join(" -> ", list2)}\n"); // apple -> banana -> cherry
 
         // Test 10: Clear
         list.Clear();
-        Console.WriteLine($"After Clear, count: {list.Count}"); // 0
+        Console.WriteLine($"After Clear, count: {list.Count}\n"); // 0
 
         // Test 11: Exception handling
         try
