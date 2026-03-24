@@ -29,7 +29,7 @@ public class Program
         Console.WriteLine("### ClassicLinkedList Tests ###\n");
 
         // Test 1: Empty list
-        var list = new ClassicLinkedList<int>();
+        var list = new SinglyLinkedList<int>();
         Console.WriteLine($"Empty list count: {list.Count}\n"); // 0
 
         // Test 2: AddFirst
@@ -67,7 +67,7 @@ public class Program
         Console.WriteLine($"After Remove(15): {string.Join(" -> ", list)}\n"); // 20 -> 10 -> 5
 
         // Test 9: Constructor with collection
-        var list2 = new ClassicLinkedList<string>(new[] { "apple", "banana", "cherry" });
+        var list2 = new SinglyLinkedList<string>(new[] { "apple", "banana", "cherry" });
         Console.WriteLine($"From collection: {string.Join(" -> ", list2)}\n"); // apple -> banana -> cherry
 
         // Test 10: Clear

@@ -4,13 +4,13 @@ using System.Text;
 
 namespace DataStructuresLib.LinkedList.LinkedListNode;
 
-public class ModernNode<T>
+public class DoublyNode<T>
 {
     public T Value { get; set; }
-    public ModernNode<T>? Previous { get; internal set; }
-    public ModernNode<T>? Next { get; internal set; }
+    public DoublyNode<T>? Previous { get; internal set; }
+    public DoublyNode<T>? Next { get; internal set; }
 
-    public ModernNode(T value)
+    public DoublyNode(T value)
     {
         Value = value;
     }

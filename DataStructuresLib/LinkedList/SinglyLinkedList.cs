@@ -11,12 +11,12 @@ namespace DataStructuresLib.LinkedList;
 /// Represents a generic singly linked list data structure that implements the IEnumerable interface.
 /// </summary>
 /// <typeparam name="T">The type of elements stored in the linked list.</typeparam>
-public class ClassicLinkedList<T> : IEnumerable<T>
+public class SinglyLinkedList<T> : IEnumerable<T>
 {
     /// <summary>
     /// Initializes a new instance of the CustomLinkedList class that is empty.
     /// </summary>
-    public ClassicLinkedList()
+    public SinglyLinkedList()
     {
 
     }
@@ -26,7 +26,7 @@ public class ClassicLinkedList<T> : IEnumerable<T>
     /// </summary>
     /// <param name="collection">The collection whose elements are copied to the new list.</param>
     /// <exception cref="ArgumentNullException">Thrown when collection is null.</exception>
-    public ClassicLinkedList(IEnumerable<T> collection)
+    public SinglyLinkedList(IEnumerable<T> collection)
     {
         ArgumentNullException.ThrowIfNull(collection);
 
@@ -39,12 +39,12 @@ public class ClassicLinkedList<T> : IEnumerable<T>
     /// <summary>
     /// Gets the first node in the linked list, or null if the list is empty.
     /// </summary>
-    public ClassicNode<T>? Head { get; private set; } = null;
+    public SinglyNode<T>? Head { get; private set; } = null;
 
     /// <summary>
     /// Gets the last node in the linked list, or null if the list is empty.
     /// </summary>
-    public ClassicNode<T>? Tail { get; private set; } = null;
+    public SinglyNode<T>? Tail { get; private set; } = null;
 
     /// <summary>
     /// Gets the number of nodes in the linked list.
@@ -78,7 +78,7 @@ public class ClassicLinkedList<T> : IEnumerable<T>
     /// </summary>
     /// <param name="value">The value to search for in the linked list.</param>
     /// <returns>The node containing the specified value, or null if not found.</returns>
-    public ClassicNode<T>? Find(T value)
+    public SinglyNode<T>? Find(T value)
     {
         var current = Head;
 
@@ -101,7 +101,7 @@ public class ClassicLinkedList<T> : IEnumerable<T>
     /// <param name="value">The value to add to the beginning of the list.</param>
     public void AddFirst(T value)
     {
-        var newNode = new ClassicNode<T>(value);
+        var newNode = new SinglyNode<T>(value);
 
         if (Count == 0)
         {
@@ -123,7 +123,7 @@ public class ClassicLinkedList<T> : IEnumerable<T>
     /// <param name="value">The value to add to the end of the list.</param>
     public void AddLast(T value)
     {
-        var newNode = new ClassicNode<T>(value);
+        var newNode = new SinglyNode<T>(value);
 
         if (Count == 0)
         {
@@ -145,11 +145,11 @@ public class ClassicLinkedList<T> : IEnumerable<T>
     /// <param name="node">The node after which to insert the new value.</param>
     /// <param name="value">The value to add after the specified node.</param>
     /// <exception cref="ArgumentNullException">Thrown when node is null.</exception>
-    public void AddAfter(ClassicNode<T> node, T value)
+    public void AddAfter(SinglyNode<T> node, T value)
     {
         ArgumentNullException.ThrowIfNull(node);
 
-        ClassicNode<T> newNodeToAdd = new(value);
+        SinglyNode<T> newNodeToAdd = new(value);
 
         if (node == Tail)
         {
@@ -158,7 +158,7 @@ public class ClassicLinkedList<T> : IEnumerable<T>
         }
         else
         {
-            ClassicNode<T> oldNextNode = node.Next;
+            SinglyNode<T> oldNextNode = node.Next;
             node.Next = newNodeToAdd;
             newNodeToAdd.Next = oldNextNode;
         }
@@ -207,7 +207,7 @@ public class ClassicLinkedList<T> : IEnumerable<T>
         }
         else
         {
-            ClassicNode<T> current = Head;
+            SinglyNode<T> current = Head;
             while (current != null)
             {
                 if (current.Next == Tail)
@@ -237,8 +237,8 @@ public class ClassicLinkedList<T> : IEnumerable<T>
             return false;
         }
 
-        ClassicNode<T> previous = null;
-        ClassicNode<T> current = Head;
+        SinglyNode<T> previous = null;
+        SinglyNode<T> current = Head;
 
         while (current != null)
         {

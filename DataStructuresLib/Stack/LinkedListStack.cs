@@ -10,14 +10,14 @@ namespace DataStructuresLib.Stack;
 /// <typeparam name="T">The type of elements stored in the stack.</typeparam>
 public class LinkedListStack<T>
 {
-    private readonly ClassicLinkedList<T> _list;
+    private readonly SinglyLinkedList<T> _list;
 
     /// <summary>
     /// Initializes a new instance of the LinkedListStack class that is empty.
     /// </summary>
     public LinkedListStack()
     {
-        _list = new ClassicLinkedList<T>();
+        _list = new SinglyLinkedList<T>();
     }
 
     /// <summary>

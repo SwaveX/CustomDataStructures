@@ -5,14 +5,14 @@ namespace DataStructuresLib.LinkedList;
 
 
 /// NOTE: Implement fully
-public class ModernLinkedList<T> : IEnumerable<T>
+public class DoublyLinkedList<T> : IEnumerable<T>
 {
-    public ModernLinkedList()
+    public DoublyLinkedList()
     {
 
     }
 
-    public ModernLinkedList(IEnumerable<T> collection)
+    public DoublyLinkedList(IEnumerable<T> collection)
     {
         ArgumentNullException.ThrowIfNull(collection);
 
@@ -23,15 +23,15 @@ public class ModernLinkedList<T> : IEnumerable<T>
     }
 
     # region Properties
-    public ModernNode<T>? Head { get; private set; }
-    public ModernNode<T>? Tail { get; private set; }
+    public DoublyNode<T>? Head { get; private set; }
+    public DoublyNode<T>? Tail { get; private set; }
     public int Count { get; private set; }
     #endregion Properties
 
     #region Insertion
-    public ModernNode<T> AddFirst(T value)
+    public DoublyNode<T> AddFirst(T value)
     {
-        var newNode = new ModernNode<T>(value);
+        var newNode = new DoublyNode<T>(value);
 
         if (Count == 0)
         {
@@ -50,9 +50,9 @@ public class ModernLinkedList<T> : IEnumerable<T>
         return newNode;
     }
 
-    public ModernNode<T> AddLast(T value)
+    public DoublyNode<T> AddLast(T value)
     {
-        var newNode = new ModernNode<T>(value);
+        var newNode = new DoublyNode<T>(value);
 
         if (Count == 0)
         {
@@ -71,11 +71,11 @@ public class ModernLinkedList<T> : IEnumerable<T>
         return newNode;
     }
 
-    public ModernNode<T> AddBefore(ModernNode<T> node, T value)
+    public DoublyNode<T> AddBefore(DoublyNode<T> node, T value)
     {
         ArgumentNullException.ThrowIfNull(node);
 
-        var newNode = new ModernNode<T>(value);
+        var newNode = new DoublyNode<T>(value);
 
         newNode.Previous = node.Previous;
 
@@ -96,7 +96,7 @@ public class ModernLinkedList<T> : IEnumerable<T>
         return newNode;
     }
 
-    public ModernNode<T> AddAfter(ModernNode<T> node, T value)
+    public DoublyNode<T> AddAfter(DoublyNode<T> node, T value)
     {
         throw new NotImplementedException();
     }
@@ -108,7 +108,7 @@ public class ModernLinkedList<T> : IEnumerable<T>
         throw new NotImplementedException();
     }
 
-    public void Remove(ModernNode<T> node)
+    public void Remove(DoublyNode<T> node)
     {
         throw new NotImplementedException();
     }
@@ -130,12 +130,12 @@ public class ModernLinkedList<T> : IEnumerable<T>
     #endregion Removal
 
     #region Search 
-    public ModernNode<T>? Find(T value)
+    public DoublyNode<T>? Find(T value)
     {
         throw new NotImplementedException();
     }
 
-    public ModernNode<T>? FindLast(T value)
+    public DoublyNode<T>? FindLast(T value)
     {
         throw new NotImplementedException();
     }
